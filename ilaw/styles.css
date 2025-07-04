@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #333;
+    cursor: pointer;
+    background-color: #d9d8d8;
+}
+
+header{
+    position: relative; /* For absolute positioning of header-card */
+    padding: 40px 40px 20px 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 400px; /* Increased height */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/images/pexels-peter-olexa-2214257-3875821.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5); /* Reduced brightness */
+    z-index: 1;
+}
+
+header > * {
+    position: relative;
+    z-index: 10;
+}
+
+/* Website name styling */
+header h2 {
+    margin: 0;
+    margin-top: 0;
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+    margin-top: 0;
+}
+
+/* Nav list items styling */
+nav li {
+    list-style: none;
+}
+
+/* Nav links styling */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    width: 100%;
+    background-color: rgba(47, 78, 71, 0.96);
+}
+
+.nav-title{
+    margin-right: 200px;
+    margin-top: -10px;
+}
+
+/* Styles for fixed nav on scroll */
+nav.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(31, 45, 42, 0.92);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 40px;
+}
+
+/* Nav links color change when fixed */
+nav.fixed a {
+    color: #c0bebe;
+    gap: 1rem;
+}
+
+
+
+/* Optional: add some padding to body to prevent content jump when nav is fixed */
+body.nav-fixed-padding {
+    padding-top: 60px; /* Adjust based on nav height */
+}
+
+/* Header card styling */
+.header-card {
+    position: absolute;
+    bottom: -30px; /* Further reduced vertical offset */
+    left: 40px; /* Align with header padding */
+    background-color: rgba(31, 45, 42, 0.96); /* Darker green color fitting background */
+    padding: 10px 20px; /* Further reduced padding */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    max-width: 280px; /* Reduced max width */
+    z-index: 20;
+    font-family: Arial, sans-serif;
+}
+
+.header-card h3 {
+    text-align: left;
+    margin: 0;
+    font-size: 16px; /* Further reduced font size */
+    color: white; /* Maintain white for contrast */
+    line-height: 20px;
+    width: 200px;
+    font-family:algerian ;
+}
+
+.header-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #6a6b6b;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+.practice-area{
+    padding: 30px;
+    font-family: algerian;
+}
+
+.practice-cards{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    padding: 10px;
+    height: 400px;
+}
+.card {
+    border: 1px solid rgba(31, 45, 42, 0.96);
+    width: 50px;
+    border-radius: 0;
+    padding: 5px;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+.card-details-text h2{
+    margin-left: 50px;
+}
+.card-text{
+    margin-left: 50px;
+}
+
+.card-details-text a{
+    font-size: 10px;
+    text-decoration: none;
+    color: rgb(104, 68, 2);
+    margin-left: 50px;
+}
+
+.details-img img{
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    margin-left: 465px;
+    margin-top: -205px;
+
+}
+
+.card-four{
+    display: flex;
+    flex-direction: row;
+}
+.card-four-text{
+    border: 1px solid rgba(31, 45, 42, 0.96);
+    width: 500px;
+    align-items: center;
+    padding: 5px;
+}
+.card-four-text .details{
+    margin-left: 60px;
+}
+.card-four-text h2{
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.card-four-img img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-four a{
+    color: black;
+    text-decoration: none;
+    font-size: 10px;
+    margin-left: 60px;
+}
+
+.card-four a i{
+    color: rgb(104, 68, 2);
+}
+
+.card-title {
+    font-size: 18px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    margin: 0   ;
+}
+
+.practice-link{
+    font-size: 10px;
+    text-decoration: none;
+    color: rgb(104, 68, 2);
+    margin-left: 40px;
+    margin-top: -20px;
+}
+.stats-section{
+    background-image: url(/images/pexels-peter-olexa-2214257-3875821.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+.bg{
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    background-color: rgba(31, 45, 42, 0.76);
+}
+.yoe, .cw, .ea, .sr{
+    padding: 10px;
+    margin-right: 150px;
+    letter-spacing: 0.2em;
+    font-family: algerian;
+}
+.stats-section h2{
+    font-weight: bolder;
+    text-align: center;
+    font-size: 50px;
+    color: rgba(230, 169, 57, 0.54);
+}
+.stats-section p{
+    font-size: 10px;
+    text-align: center;
+    margin-top: -40px;
+    color: white;
+}
+.stats-section span{
+    font-size: 30px;
+    font-weight: bolder;
+    position: absolute;
+}
+
+.footer{
+    background-color: rgba(31, 45, 42, 1);
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    background-color: #1f2d2a;
+    color: #c0bebe;
+    justify-content: space-around;
+    padding: 40px 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+    flex-wrap: wrap;
+}
+
+.footer h2 {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 10px;
+
+}
+
+.socials {
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+
+.social-icon {
+    margin-top: 10px;
+
+}
+
+.social-icon i {
+    font-size: 12px;
+    color: #c0bebe;
+    margin-right: 15px;
+    margin-bottom: 100px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.social-icon i:hover {
+    color: #6a6b6b;
+}
+
+.footer-links {
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+
+.footer-links a {
+    color: #c0bebe;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #6a6b6b;
+}
+
+.footer-links p {
+    margin-top: 35px;
+    font-size: 12px;
+    color: #6a6b6b;
+}
+
+.contact {
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+
+.contact p, .contact a {
+    font-size: 14px;
+    color: #c0bebe;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-arrow{
+    margin-top: 200px;
+    color: #6a6b6b;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: rgb(104, 68, 2);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.partners{
+    padding: 40px;
+    font-family: algerian;
+}
+.partners .title h3{
+    font-size: 15px;
+}
+hr{
+    position: relative;
+    width: 75%;
+    margin-top: -25px;
+    margin-left: 200px;
+}
+.hr{
+    margin-left: 100px;
+    width: 83.5%;
+}
+.navigation{
+    position: relative;
+    top: 0;
+    margin-left: 95%;
+    margin-top: -20px;
+}
+.navigation i{
+    border-radius: 100%;
+    background-color: rgba(142, 211, 238, .5);
+    padding: 5px;
+    font-size: 10px;
+}
+
+
+

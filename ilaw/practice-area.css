@@ -1,0 +1,87 @@
+/* Practice area cards container */
+.practice-area {
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Roboto', Arial, sans-serif;
+    position: relative;
+}
+
+/* Cards container for stacking */
+.cards-container {
+    position: relative;
+    width: 300px;
+}
+
+/* Individual card styling */
+.card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: -60px; /* Negative margin to overlap cards */
+    padding: 15px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Card header showing number and title */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Card number styling */
+.card-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004225;
+}
+
+/* Card title styling */
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #004225;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+}
+
+/* Card message hidden by default except active card */
+.card-message {
+    display: none;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Active card styles */
+.card.active {
+    margin-bottom: 20px;
+    background-color: #e0f2f1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+/* Show message for active card */
+.card.active .card-message {
+    display: block;
+}
+
+/* Message container on the right side */
+.practice-area .message-display {
+    position: absolute;
+    top: 0;
+    left: 320px;
+    width: 550px;
+    padding: 20px;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: #004225;
+    font-size: 16px;
+    font-weight: 500;
+}
