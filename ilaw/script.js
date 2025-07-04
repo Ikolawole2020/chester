@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             replacement.style.border = '1px solid rgba(31, 45, 42, 0.96)';
             replacement.style.padding = '15px';
             replacement.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-            replacement.style.width = '550px'
+            replacement.style.width = '450px'
         });
     });
 
