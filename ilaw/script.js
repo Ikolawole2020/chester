@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             replacement.style.border = '1px solid rgba(31, 45, 42, 0.96)';
             replacement.style.padding = '15px';
             replacement.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-            replacement.style.width = '500px'
+            replacement.style.width = '450px'
         });
     });
 
@@ -50,4 +50,27 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // Partners section image slider
+    const recognitions = document.querySelector('.recognitions');
+    const navigation = document.querySelector('.partners .title .navigation');
+    const leftArrow = navigation.querySelector('.fa-arrow-left');
+    const rightArrow = navigation.querySelector('.fa-arrow-right');
+
+    const imageWidth = 100 + 10 + 20; 
+    let currentPosition = 0; // 0 means showing first 8 images, 1 means shifted to show last 2
+
+    rightArrow.addEventListener('click', () => {
+        if (currentPosition === 0) {
+            recognitions.style.transform = `translateX(-${imageWidth * 2}px)`;
+            currentPosition = 1;
+        }
+    });
+
+    leftArrow.addEventListener('click', () => {
+        if (currentPosition === 1) {
+            recognitions.style.transform = 'translateX(0)';
+            currentPosition = 0;
+        }
+    });
 });
